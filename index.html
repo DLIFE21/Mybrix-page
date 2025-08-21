@@ -8,79 +8,37 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', cursive, sans-serif;
-      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
-      color: #333;
-      scroll-behavior: smooth;
-    }
-
-    /* Pantalla de inicio */
-    .inicio {
-      height: 100vh;
       background: url("fondo.jpg") no-repeat center center/cover;
+      height: 100vh;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      text-align: center;
+      flex-direction: column;
       color: white;
-      position: relative;
-      animation: fadeIn 2s ease-in-out;
+      text-align: center;
     }
-    .inicio h1 {
+    h1 {
       font-size: 2.8em;
       margin-bottom: 20px;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
     }
-    .inicio p {
-      font-size: 1.3em;
-      margin-bottom: 30px;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+    p {
+      font-size: 1.4em;
+      margin-bottom: 40px;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
     }
-    .inicio a {
+    a {
       text-decoration: none;
       background: #b30059;
+      padding: 15px 30px;
+      border-radius: 30px;
       color: white;
-      padding: 15px 25px;
-      border-radius: 25px;
       font-size: 1.2em;
       animation: pulse 1.5s infinite;
       transition: background 0.3s;
     }
-    .inicio a:hover {
+    a:hover {
       background: #ff4d88;
-    }
-
-    /* Secciones */
-    section {
-      padding: 60px 20px;
-      text-align: center;
-      min-height: 60vh;
-      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
-    }
-    h2 {
-      color: #b30059;
-      margin-bottom: 20px;
-    }
-    .shake:hover {
-      animation: shake 0.5s;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #b30059;
-      color: white;
-    }
-
-    /* Animaciones */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-20px);}
-      to { opacity: 1; transform: translateY(0);}
-    }
-    @keyframes shake {
-      0%, 100% { transform: translateX(0); }
-      25% { transform: translateX(-5px); }
-      50% { transform: translateX(5px); }
-      75% { transform: translateX(-5px); }
     }
     @keyframes pulse {
       0% { transform: scale(1); }
@@ -90,46 +48,16 @@
   </style>
 </head>
 <body>
-  <!-- Pantalla de inicio -->
-  <div class="inicio">
-    <h1>Esto es todo por ti</h1>
-    <p>Esto es todo lo que siento por ti</p>
-    <a href="#historia">Inicia nuestro recorrido</a>
-    <!-- Música de fondo -->
-    <audio id="bgMusic" autoplay loop>
-      <source src="musica.mp3" type="audio/mpeg">
-    </audio>
-  </div>
+  <h1>Esto es todo por ti</h1>
+  <p>Esto es todo lo que siento por ti</p>
+  <a href="historia.html">Inicia nuestro recorrido</a>
 
-  <!-- Secciones -->
-  <section id="historia">
-    <h2>Nuestra Historia 📖</h2>
-    <p class="shake">Aquí empieza la magia…</p>
-  </section>
-
-  <section id="galeria">
-    <h2>Galería 📸</h2>
-    <p>Pronto estarán nuestras fotos aquí 💖</p>
-  </section>
-
-  <section id="sorpresas">
-    <h2>Sorpresas 🎁</h2>
-    <p class="shake">Haz clic y descubre lo que guardé para ti.</p>
-  </section>
-
-  <section id="final">
-    <h2>Gracias por existir 🌹</h2>
-    <p>Eres lo mejor que me ha pasado 💕</p>
-  </section>
-
-  <footer>
-    <p>Hecho con amor por Darlin 💗</p>
-  </footer>
-
+  <audio autoplay loop>
+    <source src="musica.mp3" type="audio/mpeg">
+  </audio>
   <script>
-    // Configurar volumen bajo en la música
-    const bgMusic = document.getElementById("bgMusic");
-    bgMusic.volume = 0.2; // volumen 20%, suavecito
+    document.querySelector("audio").volume = 0.4;
   </script>
 </body>
 </html>
+

@@ -4,49 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nuestra Galería 📸</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #fff0f5;
-      text-align: center;
-      padding: 60px 20px;
-    }
-    h2 { color: #b30059; }
-    p { font-size: 1.2em; margin-bottom: 40px; }
-    .galeria {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-    }
-    .galeria img {
-      width: 250px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      transition: transform 0.3s;
-    }
-    .galeria img:hover { transform: scale(1.05); }
-    a {
-      display: inline-block;
-      margin-top: 40px;
-      text-decoration: none;
-      background: #b30059;
-      color: white;
-      padding: 12px 25px;
-      border-radius: 20px;
-    }
-    a:hover { background: #ff4d88; }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <h2>Nuestra Galería 📸</h2>
-  <p>Aquí estarán nuestras fotos más bonitas 💕</p>
-  <div class="galeria">
-    <!-- Aquí colocas tus imágenes -->
-    <img src="foto1.jpg" alt="Recuerdo 1">
-    <img src="foto2.jpg" alt="Recuerdo 2">
-  </div>
-  <a href="sorpresas.html">Descubre más ➝</a>
+<body class="fade-in">
+  <section class="hero" style="background: linear-gradient(135deg, #ffe6f0, #ffb6c1);">
+    <div class="overlay">
+      <h2>Nuestra Galería 📸</h2>
+      <p>Aquí estarán nuestras fotos más bonitas 💕</p>
+      <div class="galeria">
+        <img src="foto1.jpg" alt="Recuerdo 1">
+        <img src="foto2.jpg" alt="Recuerdo 2">
+        <!-- Más fotos según quieras -->
+      </div>
+      <a href="sorpresas.html" class="btn-latido">Descubre más ➝</a>
+    </div>
+  </section>
+
+  <audio autoplay loop>
+    <source src="musica.mp3" type="audio/mpeg">
+  </audio>
+  <script>
+    document.querySelector("audio").volume = 0.4;
+
+    document.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        document.body.classList.add("fade-out");
+        setTimeout(() => {
+          window.location.href = link.href;
+        }, 500);
+      });
+    });
+  </script>
 </body>
 </html>

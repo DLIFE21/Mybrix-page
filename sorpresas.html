@@ -4,46 +4,46 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sorpresas 🎁</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #ffe6f0;
-      text-align: center;
-      padding: 60px 20px;
-    }
-    h2 { color: #b30059; }
-    p { font-size: 1.2em; margin: 20px auto; max-width: 700px; }
-    .sorpresa {
-      margin: 40px auto;
-      padding: 20px;
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      width: 300px;
-      cursor: pointer;
-    }
-    .sorpresa p { display: none; }
-    .sorpresa:hover p { display: block; }
-    a {
-      display: inline-block;
-      margin-top: 40px;
-      text-decoration: none;
-      background: #b30059;
-      color: white;
-      padding: 12px 25px;
-      border-radius: 20px;
-    }
-    a:hover { background: #ff4d88; }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <h2>Sorpresas 🎁</h2>
-  <p>Descubre pequeños detalles escondidos aquí.</p>
-  <div class="sorpresa">
-    Haz clic y verás...
-    <p>💖 Eres lo más bonito de mi vida 💖</p>
-  </div>
-  <a href="final.html">Un último paso ➝</a>
+<body class="fade-in">
+  <section class="hero" style="background: linear-gradient(135deg, #ffe6f0, #ffb6c1);">
+    <div class="overlay">
+      <h2>Sorpresas 🎁</h2>
+      <p>Descubre pequeños detalles escondidos aquí.</p>
+
+      <div class="sorpresa">
+        Haz clic y verás...
+        <p>💖 Eres lo más bonito de mi vida baby💖</p>
+      </div>
+
+      <a href="final.html" class="btn-latido">Un último paso ➝</a>
+    </div>
+  </section>
+
+  <audio autoplay loop>
+    <source src="musica.mp3" type="audio/mpeg">
+  </audio>
+  <script>
+    document.querySelector("audio").volume = 0.4;
+
+    // Mostrar mensaje sorpresa al hacer hover/click
+    document.querySelector(".sorpresa").addEventListener("click", () => {
+      const p = document.querySelector(".sorpresa p");
+      p.style.display = p.style.display === "block" ? "none" : "block";
+    });
+
+    // Fade entre páginas
+    document.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        document.body.classList.add("fade-out");
+        setTimeout(() => {
+          window.location.href = link.href;
+        }, 500);
+      });
+    });
+  </script>
 </body>
 </html>
+

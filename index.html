@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galletas FibraViva</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+  
+<body>
+
+  <!-- SECCIÓN: INICIO -->
+  <section id="inicio" class="seccion">
+    <img src="https://i.imgur.com/HpvV0tA.jpeg" alt="Logo FibraViva" class="logo">
+    <h1>Fibra Viva</h1>
+    <p class="slogan">Energía natural en cada mordida</p>
+  </section>
+
+  <!-- SECCIÓN: SOBRE NOSOTROS -->
+  <section id="sobre" class="seccion">
+    <h2>Sobre Nosotros</h2>
+    <p>Galletas artesanales elaboradas con:</p>
+    <ul>
+      <li>Avena integral</li>
+      <li>Almendras troceadas</li>
+      <li>Cardamomo</li>
+      <li>Semillas de amapola</li>
+    </ul>
+    <p class="slogan-secundario">Las mejores galletas para complacer tu paladar.</p>
+  </section>
+
+  <!-- SECCIÓN: COMPRA -->
+  <section id="compra" class="seccion">
+    <h2>Compra</h2>
+    <img src="https://i.imgur.com/z5RDAjd.jpeg" alt="Galletas FibraViva" class="producto-img">
+    <p><strong>Precio:</strong> RD$350 por 8 unidades</p>
+
+    <label>Cantidad de paquetes:
+      <input type="number" id="cantidad" value="1" min="1">
+    </label><br><br>
+    <!-- Resumen de compra -->
+<div id="resumenCompra" style="margin-top:10px; font-weight:bold; display:none;">
+    Total a pagar: RD$0
+</div>
+
+<script>
+    const precioUnitario = 350;
+    const inputCantidad = document.getElementById("cantidad");
+    const resumenDiv = document.getElementById("resumenCompra");
+
+    // Detecta cambios en la cantidad
+    inputCantidad.addEventListener("input", () => {
+        let cantidad = parseInt(inputCantidad.value) || 0;
+        let total = cantidad * precioUnitario;
+
+        if (cantidad > 0) {
+            resumenDiv.style.display = "block";
+            resumenDiv.textContent = `Total a pagar: RD$${total}`;
+        } else {
+            resumenDiv.style.display = "none";
+        }
+    });
+</script>
+
+
+    <!-- Botón inicial -->
+<button id="botonComprar">Comprar ahora</button>
+
+<!-- Contenedor dinámico -->
+<div id="formularioCompra" style="display:none; margin-top:10px;">
+  <label for="direccion">Dirección de envío:</label><br>
+  <input type="text" id="direccion" placeholder="Escribe tu dirección" style="width: 100%; margin-bottom:10px;"><br>
+
+  <label for="metodoPago">Método de pago:</label><br>
+  <select id="metodoPago" style="width: 100%; margin-bottom:10px;">
+    <option value="">Selecciona...</option>
+    <option value="transferencia">Transferencia</option>
+    <option value="tarjeta">Tarjeta</option>
+    <option value="efectivo">Efectivo</option>
+  </select>
+
+  <!-- Campos adicionales según método -->
+  <div id="camposExtra" style="margin-top:10px;"></div>
+</div>
+
+<script>
+  const botonComprar = document.getElementById("botonComprar");
+  const formularioCompra = document.getElementById("formularioCompra");
+  const metodoPago = document.getElementById("metodoPago");
+  const camposExtra = document.getElementById("camposExtra");
+
+  // Mostrar formulario al dar clic en comprar
+  botonComprar.addEventListener("click", () => {
+    formularioCompra.style.display = "block";
+  });
+
+  // Cambiar dinámicamente según método seleccionado
+  metodoPago.addEventListener("change", () => {
+    camposExtra.innerHTML = ""; // Limpiar antes
+
+    if (metodoPago.value === "transferencia") {
+      camposExtra.innerHTML = `
+       <p><strong>Cuenta bancaria:</strong> Banco Popular — 799872345 —  FibraViva SRL</p>
+      `;
+    }
+
+    if (metodoPago.value === "tarjeta") {
+      camposExtra.innerHTML = `
+        <label>Número de tarjeta:</label><br>
+        <input type="text" placeholder="xxxx-xxxx-xxxx-xxxx" style="width: 100%; margin-bottom:10px;"><br>
+        <label>Fecha de expiración:</label><br>
+        <input type="text" placeholder="MM/AA" style="margin-bottom:10px;"><br>
+        <label>CVV:</label><br>
+        <input type="text" placeholder="123" style="margin-bottom:10px;"><br>
+        <button onclick="alert('Pago realizado con éxito')">Confirmar pago</button>
+      `;
+    }
+
+    if (metodoPago.value === "efectivo") {
+      camposExtra.innerHTML = `
+        <p>El pago se realizará en efectivo al momento de la entrega.</p>
+        <button onclick="alert('Pago realizado con éxito')">Confirmar pedido</button>
+      `;
+    }
+  });
+</script>
+
+
+ <!-- SECCIÓN: CONTACTO -->
+  <section id="contacto" class="seccion">
+    <h2>Contacto</h2>
+    <p><strong>Dirección:</strong> Abraham Lincoln con esquina A, Calle José Amado Soler #104</p>
+    <p><strong>Tel:</strong> 809-559-3142 | <strong>WhatsApp:</strong> 809-315-8422</p>
+  </section>
+
+  <!-- SECCIÓN: RECLAMACIONES -->
+  <section id="reclamaciones" class="seccion">
+    <h2>¿Reclamaciones?</h2>
+    <p>Si tienes alguna queja, duda o comentario, escríbenos por WhatsApp o llámanos directamente. ¡Queremos ayudarte!</p>
+  </section>
+
+  <footer>
+    <p>© 2025 Fibra Viva - Proyecto académico para Tecnología de los Alimentos</p>
+  </footer>
+
+</body>
+</html>

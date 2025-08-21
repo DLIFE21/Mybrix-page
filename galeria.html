@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuestra Galería 📸</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff0f5;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    h2 { color: #b30059; }
+    p { font-size: 1.2em; margin-bottom: 40px; }
+    .galeria {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+    .galeria img {
+      width: 250px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+    .galeria img:hover { transform: scale(1.05); }
+    a {
+      display: inline-block;
+      margin-top: 40px;
+      text-decoration: none;
+      background: #b30059;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 20px;
+    }
+    a:hover { background: #ff4d88; }
+  </style>
+</head>
+<body>
+  <h2>Nuestra Galería 📸</h2>
+  <p>Aquí estarán nuestras fotos más bonitas 💕</p>
+  <div class="galeria">
+    <!-- Aquí colocas tus imágenes -->
+    <img src="foto1.jpg" alt="Recuerdo 1">
+    <img src="foto2.jpg" alt="Recuerdo 2">
+  </div>
+  <a href="sorpresas.html">Descubre más ➝</a>
+</body>
+</html>

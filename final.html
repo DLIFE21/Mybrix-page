@@ -3,35 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gracias... baby...💖</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: #b30059;
-      flex-direction: column;
-    }
-    h2 { font-size: 2.4em; margin-bottom: 20px; }
-    p { font-size: 1.3em; margin-bottom: 30px; }
-    a {
-      text-decoration: none;
-      background: #b30059;
-      color: white;
-      padding: 12px 25px;
-      border-radius: 20px;
-    }
-    a:hover { background: #ff4d88; }
-  </style>
+  <title>Gracias 💖</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <h2>Gracias por existir Bri🌹</h2>
-  <p>Eres lo mejor que me ha pasado baby, te amo💕</p>
-  <a href="index.html">Volver al inicio </a>
+<body class="fade-in">
+  <section class="hero">
+    <div class="overlay">
+      <h2>Gracias por existir 🌹</h2>
+      <p>Eres lo mejor que me ha pasado 💕</p>
+      <a href="index.html" class="btn-latido">Volver al inicio </a>
+    </div>
+  </section>
+
+  <audio autoplay loop>
+    <source src="musica.mp3" type="audio/mpeg">
+  </audio>
+  <script>
+    document.querySelector("audio").volume = 0.4;
+
+    // Fade entre páginas
+    document.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        document.body.classList.add("fade-out");
+        setTimeout(() => {
+          window.location.href = link.href;
+        }, 500);
+      });
+    });
+  </script>
 </body>
 </html>
+

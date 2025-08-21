@@ -67,3 +67,19 @@
 @keyframes fadeOut {
   to { opacity: 0; }
 }
+.sorpresa {
+  margin: 40px auto;
+  padding: 20px;
+  background: rgba(255,255,255,0.8);
+  border-radius: 15px;
+  width: 300px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.sorpresa p {
+  display: none;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #b30059;
+}

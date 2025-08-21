@@ -4,34 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nuestra Historia 💕</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
-      text-align: center;
-      padding: 60px 20px;
-    }
-    h2 { color: #b30059; font-size: 2.2em; }
-    p { font-size: 1.2em; margin: 20px auto; max-width: 700px; }
-    a {
-      display: inline-block;
-      margin-top: 40px;
-      text-decoration: none;
-      background: #b30059;
-      color: white;
-      padding: 12px 25px;
-      border-radius: 20px;
-    }
-    a:hover { background: #ff4d88; }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <h2>Nuestra Historia 📖</h2>
-  <p>
-    Aquí podrás contar cómo empezó todo, tus recuerdos favoritos,
-    y lo que significa para ti.  
-  </p>
-  <a href="galeria.html">Continuemos ➝</a>
+<body class="fade-in">
+  <section class="hero">
+    <div class="overlay">
+      <h2>Nuestra Historia 📖</h2>
+      <p>
+        Aquí puedes contar cómo empezó todo, tus recuerdos favoritos,  
+        y lo que significa para ti. Cada momento es un capítulo de nuestro libro.  
+      </p>
+      <a href="galeria.html" class="btn-latido">Continuemos ➝</a>
+    </div>
+  </section>
+
+  <audio autoplay loop>
+    <source src="musica.mp3" type="audio/mpeg">
+  </audio>
+  <script>
+    document.querySelector("audio").volume = 0.4;
+
+    // Fade entre páginas
+    document.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        document.body.classList.add("fade-out");
+        setTimeout(() => {
+          window.location.href = link.href;
+        }, 500);
+      });
+    });
+  </script>
 </body>
 </html>

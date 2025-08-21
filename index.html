@@ -3,145 +3,133 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Galletas FibraViva</title>
-  <link rel="stylesheet" href="estilos.css">
+  <title>Para Mi Chica 💖</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', cursive, sans-serif;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    /* Pantalla de inicio */
+    .inicio {
+      height: 100vh;
+      background: url("fondo.jpg") no-repeat center center/cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      position: relative;
+      animation: fadeIn 2s ease-in-out;
+    }
+    .inicio h1 {
+      font-size: 2.8em;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+    }
+    .inicio p {
+      font-size: 1.3em;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+    }
+    .inicio a {
+      text-decoration: none;
+      background: #b30059;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 25px;
+      font-size: 1.2em;
+      animation: pulse 1.5s infinite;
+      transition: background 0.3s;
+    }
+    .inicio a:hover {
+      background: #ff4d88;
+    }
+
+    /* Secciones */
+    section {
+      padding: 60px 20px;
+      text-align: center;
+      min-height: 60vh;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+    }
+    h2 {
+      color: #b30059;
+      margin-bottom: 20px;
+    }
+    .shake:hover {
+      animation: shake 0.5s;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #b30059;
+      color: white;
+    }
+
+    /* Animaciones */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      50% { transform: translateX(5px); }
+      75% { transform: translateX(-5px); }
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+  </style>
 </head>
-  
 <body>
+  <!-- Pantalla de inicio -->
+  <div class="inicio">
+    <h1>Esto es todo por ti</h1>
+    <p>Esto es todo lo que siento por ti</p>
+    <a href="#historia">Inicia nuestro recorrido</a>
+    <!-- Música de fondo -->
+    <audio id="bgMusic" autoplay loop>
+      <source src="musica.mp3" type="audio/mpeg">
+    </audio>
+  </div>
 
-  <!-- SECCIÓN: INICIO -->
-  <section id="inicio" class="seccion">
-    <img src="https://i.imgur.com/HpvV0tA.jpeg" alt="Logo FibraViva" class="logo">
-    <h1>Fibra Viva</h1>
-    <p class="slogan">Energía natural en cada mordida</p>
+  <!-- Secciones -->
+  <section id="historia">
+    <h2>Nuestra Historia 📖</h2>
+    <p class="shake">Aquí empieza la magia…</p>
   </section>
 
-  <!-- SECCIÓN: SOBRE NOSOTROS -->
-  <section id="sobre" class="seccion">
-    <h2>Sobre Nosotros</h2>
-    <p>Galletas artesanales elaboradas con:</p>
-    <ul>
-      <li>Avena integral</li>
-      <li>Almendras troceadas</li>
-      <li>Cardamomo</li>
-      <li>Semillas de amapola</li>
-    </ul>
-    <p class="slogan-secundario">Las mejores galletas para complacer tu paladar.</p>
+  <section id="galeria">
+    <h2>Galería 📸</h2>
+    <p>Pronto estarán nuestras fotos aquí 💖</p>
   </section>
 
-  <!-- SECCIÓN: COMPRA -->
-  <section id="compra" class="seccion">
-    <h2>Compra</h2>
-    <img src="https://i.imgur.com/z5RDAjd.jpeg" alt="Galletas FibraViva" class="producto-img">
-    <p><strong>Precio:</strong> RD$350 por 8 unidades</p>
-
-    <label>Cantidad de paquetes:
-      <input type="number" id="cantidad" value="1" min="1">
-    </label><br><br>
-    <!-- Resumen de compra -->
-<div id="resumenCompra" style="margin-top:10px; font-weight:bold; display:none;">
-    Total a pagar: RD$0
-</div>
-
-<script>
-    const precioUnitario = 350;
-    const inputCantidad = document.getElementById("cantidad");
-    const resumenDiv = document.getElementById("resumenCompra");
-
-    // Detecta cambios en la cantidad
-    inputCantidad.addEventListener("input", () => {
-        let cantidad = parseInt(inputCantidad.value) || 0;
-        let total = cantidad * precioUnitario;
-
-        if (cantidad > 0) {
-            resumenDiv.style.display = "block";
-            resumenDiv.textContent = `Total a pagar: RD$${total}`;
-        } else {
-            resumenDiv.style.display = "none";
-        }
-    });
-</script>
-
-
-    <!-- Botón inicial -->
-<button id="botonComprar">Comprar ahora</button>
-
-<!-- Contenedor dinámico -->
-<div id="formularioCompra" style="display:none; margin-top:10px;">
-  <label for="direccion">Dirección de envío:</label><br>
-  <input type="text" id="direccion" placeholder="Escribe tu dirección" style="width: 100%; margin-bottom:10px;"><br>
-
-  <label for="metodoPago">Método de pago:</label><br>
-  <select id="metodoPago" style="width: 100%; margin-bottom:10px;">
-    <option value="">Selecciona...</option>
-    <option value="transferencia">Transferencia</option>
-    <option value="tarjeta">Tarjeta</option>
-    <option value="efectivo">Efectivo</option>
-  </select>
-
-  <!-- Campos adicionales según método -->
-  <div id="camposExtra" style="margin-top:10px;"></div>
-</div>
-
-<script>
-  const botonComprar = document.getElementById("botonComprar");
-  const formularioCompra = document.getElementById("formularioCompra");
-  const metodoPago = document.getElementById("metodoPago");
-  const camposExtra = document.getElementById("camposExtra");
-
-  // Mostrar formulario al dar clic en comprar
-  botonComprar.addEventListener("click", () => {
-    formularioCompra.style.display = "block";
-  });
-
-  // Cambiar dinámicamente según método seleccionado
-  metodoPago.addEventListener("change", () => {
-    camposExtra.innerHTML = ""; // Limpiar antes
-
-    if (metodoPago.value === "transferencia") {
-      camposExtra.innerHTML = `
-       <p><strong>Cuenta bancaria:</strong> Banco Popular — 799872345 —  FibraViva SRL</p>
-      `;
-    }
-
-    if (metodoPago.value === "tarjeta") {
-      camposExtra.innerHTML = `
-        <label>Número de tarjeta:</label><br>
-        <input type="text" placeholder="xxxx-xxxx-xxxx-xxxx" style="width: 100%; margin-bottom:10px;"><br>
-        <label>Fecha de expiración:</label><br>
-        <input type="text" placeholder="MM/AA" style="margin-bottom:10px;"><br>
-        <label>CVV:</label><br>
-        <input type="text" placeholder="123" style="margin-bottom:10px;"><br>
-        <button onclick="alert('Pago realizado con éxito')">Confirmar pago</button>
-      `;
-    }
-
-    if (metodoPago.value === "efectivo") {
-      camposExtra.innerHTML = `
-        <p>El pago se realizará en efectivo al momento de la entrega.</p>
-        <button onclick="alert('Pago realizado con éxito')">Confirmar pedido</button>
-      `;
-    }
-  });
-</script>
-
-
- <!-- SECCIÓN: CONTACTO -->
-  <section id="contacto" class="seccion">
-    <h2>Contacto</h2>
-    <p><strong>Dirección:</strong> Abraham Lincoln con esquina A, Calle José Amado Soler #104</p>
-    <p><strong>Tel:</strong> 809-559-3142 | <strong>WhatsApp:</strong> 809-315-8422</p>
+  <section id="sorpresas">
+    <h2>Sorpresas 🎁</h2>
+    <p class="shake">Haz clic y descubre lo que guardé para ti.</p>
   </section>
 
-  <!-- SECCIÓN: RECLAMACIONES -->
-  <section id="reclamaciones" class="seccion">
-    <h2>¿Reclamaciones?</h2>
-    <p>Si tienes alguna queja, duda o comentario, escríbenos por WhatsApp o llámanos directamente. ¡Queremos ayudarte!</p>
+  <section id="final">
+    <h2>Gracias por existir 🌹</h2>
+    <p>Eres lo mejor que me ha pasado 💕</p>
   </section>
 
   <footer>
-    <p>© 2025 Fibra Viva - Proyecto académico para Tecnología de los Alimentos</p>
+    <p>Hecho con amor por Darlin 💗</p>
   </footer>
 
+  <script>
+    // Configurar volumen bajo en la música
+    const bgMusic = document.getElementById("bgMusic");
+    bgMusic.volume = 0.2; // volumen 20%, suavecito
+  </script>
 </body>
 </html>

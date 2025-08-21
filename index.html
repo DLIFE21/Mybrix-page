@@ -4,66 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Para Mi Chica 💖</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
-
-    .hero {
-      position: relative;
-      background: url('https://i.imgur.com/XSq57Ev.jpeg') no-repeat center center/cover;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-
-    .hero .overlay {
-      background: rgba(0, 0, 0, 0.4);
-      padding: 20px 40px;
-      border-radius: 15px;
-      max-width: 800px;
-    }
-
-    .hero h1,
-    .hero p {
-      color: #fff;
-      margin: 10px 0;
-    }
-
-    .hero a {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      background: #ff4d6d;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 10px;
-      transition: background 0.3s;
-    }
-
-    .hero a:hover {
-      background: #ff1a4c;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="fade-in">
   <section class="hero">
     <div class="overlay">
-      <h1>Hice todo esto para ti amor, solo un recordatorio de lo especial que eres para mi desde que nos conocimos...</h1>
-      <p>Esto y más mereces mi amor, y siempre me aseguraré de demostrártelo si me lo permites 💕</p>
-      <a href="historia.html">Si estás de acuerdo... Inicia nuestro recorrido</a>
+      <h1>
+        Hice todo esto para ti amor, solo un recordatorio de lo especial que eres para mí desde que nos conocimos...
+      </h1>
+      <p>
+        Esto y más mereces mi amor, y siempre me aseguraré de demostrártelo si me lo permites 💕
+      </p>
+      <a href="historia.html" class="btn-latido">Si estás de acuerdo... Inicia nuestro recorrido</a>
     </div>
   </section>
 
+  <!-- Música -->
   <audio autoplay loop>
     <source src="musica.mp3" type="audio/mpeg">
   </audio>
   <script>
     document.querySelector("audio").volume = 0.4;
+
+    // Animación fade entre páginas
+    document.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        document.body.classList.add("fade-out");
+        setTimeout(() => {
+          window.location.href = link.href;
+        }, 500);
+      });
+    });
   </script>
 </body>
 </html>

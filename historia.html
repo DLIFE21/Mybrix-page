@@ -3,37 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nuestra Historia 💕</title>
+  <title>Nuestra Historia 💌</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="fade-in">
+<body class="historia-bg">
   <section class="hero">
     <div class="overlay">
-      <h2>Nuestra Historia 📖</h2>
-      <p>
-        Aquí puedes contar cómo empezó todo, tus recuerdos favoritos,  
-        y lo que significa para ti. Cada momento es un capítulo de nuestro libro.  
-      </p>
-      <a href="galeria.html" class="btn-latido">Continuemos ➝</a>
+      <h1>Nuestra historia comenzó con una chispa ✨</h1>
+      <p>Cada momento contigo es un capítulo que jamás quiero dejar de escribir...</p>
+      <a href="galeria.html" class="btn">Continuar recorrido</a>
     </div>
   </section>
-
-  <audio autoplay loop>
-    <source src="musica.mp3" type="audio/mpeg">
-  </audio>
-  <script>
-    document.querySelector("audio").volume = 0.4;
-
-    // Fade entre páginas
-    document.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", e => {
-        e.preventDefault();
-        document.body.classList.add("fade-out");
-        setTimeout(() => {
-          window.location.href = link.href;
-        }, 500);
-      });
-    });
-  </script>
 </body>
 </html>
+

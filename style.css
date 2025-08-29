@@ -1,13 +1,25 @@
-/* Fondo por página */
-body.index .hero {
-  background: url('img/fondo-index.jpg') no-repeat center center/cover;
+/* ====== Fondos distintos por página ====== */
+.index-bg {
+  background: url('img/index-bg.jpg') no-repeat center center/cover;
 }
 
-body.historia .hero {
-  background: url('img/fondo-historia.jpg') no-repeat center center/cover;
+.historia-bg {
+  background: url('img/historia-bg.jpg') no-repeat center center/cover;
 }
 
-/* Hero general */
+.galeria-bg {
+  background: url('img/galeria-bg.jpg') no-repeat center center/cover;
+}
+
+.sorpresas-bg {
+  background: url('img/sorpresas-bg.jpg') no-repeat center center/cover;
+}
+
+.final-bg {
+  background: url('img/final-bg.jpg') no-repeat center center/cover;
+}
+
+/* ====== Estructura Hero ====== */
 .hero {
   position: relative;
   height: 100vh;
@@ -15,58 +27,48 @@ body.historia .hero {
   align-items: center;
   justify-content: center;
   text-align: center;
-  animation: fadeIn 2s ease-in-out;
 }
 
-/* Overlay */
-.hero .overlay {
-  background: rgba(0, 0, 0, 0.45);
-  padding: 30px 50px;
+.overlay {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 25px 40px;
   border-radius: 15px;
   max-width: 800px;
+  animation: fadeIn 2s ease;
 }
 
-/* Texto */
 .hero h1, .hero p {
   color: #fff;
-  margin: 0 0 20px;
+  margin: 0 0 15px;
 }
 
-/* Botón */
+/* ====== Botones ====== */
 .btn {
   display: inline-block;
-  background: #ff4f81;
-  color: #fff;
   padding: 12px 25px;
+  margin-top: 15px;
+  color: #fff;
+  background: #e91e63;
+  border-radius: 25px;
   text-decoration: none;
   font-weight: bold;
-  border-radius: 10px;
   transition: all 0.3s ease;
   animation: pulse 2s infinite;
 }
 
 .btn:hover {
-  background: #e33b6b;
+  background: #ad1457;
   transform: scale(1.05);
 }
 
-/* Animaciones */
+/* ====== Animaciones ====== */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
 
 @keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.08); }
-}
-
-/* Transición entre páginas */
-body {
-  animation: fadePage 1s ease;
-}
-
-@keyframes fadePage {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }

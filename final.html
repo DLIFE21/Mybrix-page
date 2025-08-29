@@ -3,35 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gracias 💖</title>
+  <title>Final 💞</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="fade-in">
+<body class="final-bg">
   <section class="hero">
     <div class="overlay">
-      <h2>Gracias por existir 🌹</h2>
-      <p>Eres lo mejor que me ha pasado 💕</p>
-      <a href="index.html" class="btn-latido">Volver al inicio </a>
+      <h1>Y así termina este recorrido... 💕</h1>
+      <p>Pero nuestra historia apenas comienza, contigo quiero escribir cada página más hermosa que la anterior.</p>
+      <a href="index.html" class="btn">Volver al inicio</a>
     </div>
   </section>
-
-  <audio autoplay loop>
-    <source src="musica.mp3" type="audio/mpeg">
-  </audio>
-  <script>
-    document.querySelector("audio").volume = 0.4;
-
-    // Fade entre páginas
-    document.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", e => {
-        e.preventDefault();
-        document.body.classList.add("fade-out");
-        setTimeout(() => {
-          window.location.href = link.href;
-        }, 500);
-      });
-    });
-  </script>
 </body>
 </html>
-

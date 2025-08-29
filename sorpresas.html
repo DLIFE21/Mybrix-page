@@ -6,44 +6,13 @@
   <title>Sorpresas 🎁</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="fade-in">
-  <section class="hero" style="background: linear-gradient(135deg, #ffe6f0, #ffb6c1);">
+<body class="sorpresas-bg">
+  <section class="hero">
     <div class="overlay">
-      <h2>Sorpresas 🎁</h2>
-      <p>Descubre pequeños detalles escondidos aquí.</p>
-
-      <div class="sorpresa">
-        Haz clic y verás...
-        <p>💖 Eres lo más bonito de mi vida baby💖</p>
-      </div>
-
-      <a href="final.html" class="btn-latido">Un último paso ➝</a>
+      <h1>Tengo algo preparado para ti 💖</h1>
+      <p>Las pequeñas sorpresas son mi manera de recordarte cuánto te amo baby...</p>
+      <a href="final.html" class="btn">Ir al final</a>
     </div>
   </section>
-
-  <audio autoplay loop>
-    <source src="musica.mp3" type="audio/mpeg">
-  </audio>
-  <script>
-    document.querySelector("audio").volume = 0.4;
-
-    // Mostrar mensaje sorpresa al hacer hover/click
-    document.querySelector(".sorpresa").addEventListener("click", () => {
-      const p = document.querySelector(".sorpresa p");
-      p.style.display = p.style.display === "block" ? "none" : "block";
-    });
-
-    // Fade entre páginas
-    document.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", e => {
-        e.preventDefault();
-        document.body.classList.add("fade-out");
-        setTimeout(() => {
-          window.location.href = link.href;
-        }, 500);
-      });
-    });
-  </script>
 </body>
 </html>
-

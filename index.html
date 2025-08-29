@@ -6,36 +6,21 @@
   <title>Para Mi Chica 💖</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="fade-in">
+<body>
   <section class="hero">
     <div class="overlay">
-      <h1>
-        Hice todo esto para ti amor, solo un recordatorio de lo especial que eres para mí desde que nos conocimos...
-      </h1>
-      <p>
-        Esto y más mereces mi amor, y siempre me aseguraré de demostrártelo si me lo permites 💕
-      </p>
-      <a href="historia.html" class="btn-latido">Si estás de acuerdo... Inicia nuestro recorrido</a>
+      <h1>Hice todo esto para ti amor, solo un recordatorio de lo especial que eres para mi desde que nos conocimos...</h1>
+      <p>Esto y más mereces mi amor, y siempre me aseguraré de demostrártelo si me lo permites</p>
+      <a href="historia.html" class="btn">Si estás de acuerdo... Inicia nuestro recorrido</a>
     </div>
   </section>
 
-  <!-- Música -->
   <audio autoplay loop>
     <source src="musica.mp3" type="audio/mpeg">
   </audio>
   <script>
     document.querySelector("audio").volume = 0.4;
-
-    // Animación fade entre páginas
-    document.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", e => {
-        e.preventDefault();
-        document.body.classList.add("fade-out");
-        setTimeout(() => {
-          window.location.href = link.href;
-        }, 500);
-      });
-    });
   </script>
 </body>
 </html>
+

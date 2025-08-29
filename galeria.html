@@ -3,38 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nuestra Galería 📸</title>
+  <title>Galería 📸</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="fade-in">
-  <section class="hero" style="background: linear-gradient(135deg, #ffe6f0, #ffb6c1);">
+<body class="galeria-bg">
+  <section class="hero">
     <div class="overlay">
-      <h2>Nuestra Galería 📸</h2>
-      <p>Aquí estarán nuestras fotos más bonitas 💕</p>
-      <div class="galeria">
-        <img src="foto1.jpg" alt="Recuerdo 1">
-        <img src="foto2.jpg" alt="Recuerdo 2">
-        <!-- Más fotos según quieras -->
-      </div>
-      <a href="sorpresas.html" class="btn-latido">Descubre más ➝</a>
+      <h1>Un vistazo a nuestros recuerdos 🌹</h1>
+      <p>Cada foto guarda una historia, cada sonrisa un motivo...</p>
+      <a href="sorpresas.html" class="btn">Ver sorpresas</a>
     </div>
   </section>
-
-  <audio autoplay loop>
-    <source src="musica.mp3" type="audio/mpeg">
-  </audio>
-  <script>
-    document.querySelector("audio").volume = 0.4;
-
-    document.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", e => {
-        e.preventDefault();
-        document.body.classList.add("fade-out");
-        setTimeout(() => {
-          window.location.href = link.href;
-        }, 500);
-      });
-    });
-  </script>
 </body>
 </html>

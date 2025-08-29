@@ -1,103 +1,72 @@
-/* Fondo con imagen */
+/* Fondo por página */
+body.index .hero {
+  background: url('img/fondo-index.jpg') no-repeat center center/cover;
+}
+
+body.historia .hero {
+  background: url('img/fondo-historia.jpg') no-repeat center center/cover;
+}
+
+/* Hero general */
 .hero {
   position: relative;
-  background: url('https://i.imgur.com/XSq57Ev.jpeg') no-repeat center center/cover;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 20px;
+  animation: fadeIn 2s ease-in-out;
 }
 
-/* Capa oscura */
+/* Overlay */
 .hero .overlay {
   background: rgba(0, 0, 0, 0.45);
-  padding: 30px 40px;
+  padding: 30px 50px;
   border-radius: 15px;
-  max-width: 900px;
+  max-width: 800px;
 }
 
 /* Texto */
-.hero h1,
-.hero p {
+.hero h1, .hero p {
   color: #fff;
   margin: 0 0 20px;
 }
 
-/* Botón con efecto latido */
-.btn-latido {
+/* Botón */
+.btn {
   display: inline-block;
-  margin-top: 15px;
-  padding: 12px 24px;
-  background: #ff4b5c;
+  background: #ff4f81;
   color: #fff;
+  padding: 12px 25px;
   text-decoration: none;
-  border-radius: 30px;
   font-weight: bold;
-  transition: background 0.3s ease;
-  animation: latido 1.5s infinite;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  animation: pulse 2s infinite;
 }
 
-.btn-latido:hover {
-  background: #ff2e44;
+.btn:hover {
+  background: #e33b6b;
+  transform: scale(1.05);
 }
 
-@keyframes latido {
-  0%, 100% { transform: scale(1); }
-  25% { transform: scale(1.08); }
-  50% { transform: scale(0.97); }
-  75% { transform: scale(1.05); }
-}
-
-/* Animación fade entre páginas */
-.fade-in {
-  animation: fadeIn 0.6s ease forwards;
-  opacity: 0;
-}
-
-.fade-out {
-  animation: fadeOut 0.6s ease forwards;
-}
-
+/* Animaciones */
 @keyframes fadeIn {
+  from { opacity: 0; }
   to { opacity: 1; }
 }
 
-@keyframes fadeOut {
-  to { opacity: 0; }
-}
-.sorpresa {
-  margin: 40px auto;
-  padding: 20px;
-  background: rgba(255,255,255,0.8);
-  border-radius: 15px;
-  width: 300px;
-  cursor: pointer;
-  text-align: center;
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
 }
 
-.sorpresa p {
-  display: none;
-  margin-top: 15px;
-  font-weight: bold;
-  color: #b30059;
-}
-.galeria {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  margin: 20px 0;
+/* Transición entre páginas */
+body {
+  animation: fadePage 1s ease;
 }
 
-.galeria img {
-  width: 250px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  transition: transform 0.3s;
-}
-
-.galeria img:hover {
-  transform: scale(1.05);
+@keyframes fadePage {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }

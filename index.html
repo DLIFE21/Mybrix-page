@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Para Ti</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="petalos"></canvas>
+
+<div class="carta">
+  <h1 id="titulo"></h1>
+
+  <p class="mensaje">
+    No te elegí porque fueras fácil.
+    Te elegí porque contigo todo tiene sentido.
+    Si el mundo se volviera incierto,
+    mi lugar seguro seguiría siendo tu abrazo.
+  </p>
+
+  <div class="contador">
+    Te amo desde hace:
+    <h2 id="tiempo"></h2>
+  </div>
+
+  <button onclick="mostrarMensaje()">No lo presiones…</button>
+
+  <p id="extra" class="oculto">
+    Y si tuviera que volver a empezar,
+    te elegiría otra vez… incluso antes de conocerte.
+  </p>
+
+  <div id="propuesta" class="oculto2">
+    <p class="pregunta">
+      ¿Quieres volver a ser mi San Valentín por siempre? 👩🏽‍❤️‍💋‍👨🏾
+    </p>
+    <div class="botones">
+      <button onclick="aceptar()">Sí 💖</button>
+      <button id="noBtn" onmouseover="moverNo()">No 🙃</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

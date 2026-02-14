@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #000000, #1a0010);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+  overflow: hidden;
+  transition: 1s;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.carta {
+  position: relative;
+  z-index: 1;
+  background: #111;
+  padding: 40px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 0 40px rgba(255, 20, 147, 0.5);
+  border: 1px solid #ff1493;
+}
+
+h1 {
+  color: #ff1493;
+  min-height: 40px;
+}
+
+.mensaje {
+  margin: 20px 0;
+  line-height: 1.6;
+}
+
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  background: #ff1493;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #ff69b4;
+  transform: scale(1.05);
+}
+
+.oculto, .oculto2 {
+  opacity: 0;
+  transition: 1s;
+}
+
+.mostrar {
+  opacity: 1;
+}
+
+.botones {
+  margin-top: 15px;
+}
